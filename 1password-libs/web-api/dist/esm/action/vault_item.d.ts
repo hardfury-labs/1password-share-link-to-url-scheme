@@ -1,0 +1,22 @@
+import * as api from "../api";
+import * as model from "../model";
+import { VaultItem } from "../model";
+import { Context } from "./context";
+export declare const getVaultItemWithUuid: (c: Context, vault: model.Vault, uuid: string, item?: model.VaultItem | undefined) => Promise<VaultItem>;
+export declare const getVaultItemsOverviews: (c: Context, vault: model.Vault) => Promise<VaultItem[]>;
+export declare const getVaultItems: (c: Context, vault: model.Vault) => Promise<VaultItem[]>;
+export declare const getDocument: (c: Context, item: VaultItem, documentAttributes: VaultItem.DocumentAttributes) => Promise<Uint8Array>;
+export declare const getDocumentBlob: (c: Context, item: VaultItem, documentAttributes: VaultItem.DocumentAttributes) => Promise<Blob>;
+export declare const uploadDocument: (c: Context, content: ArrayBuffer, fileName: string) => Promise<VaultItem.DocumentAttributes>;
+export declare const getFile: (c: Context, item: VaultItem, fileAttributes: VaultItem.FileAttributes) => Promise<Uint8Array>;
+export declare const uploadFile: (c: Context, content: ArrayBuffer) => Promise<VaultItem.FileAttributes>;
+export declare const getCustomIconForItem: (c: Context, item: VaultItem) => Promise<string>;
+/** Add or update vault items on the server */
+export declare const patchVaultItems: (c: Context, items: readonly VaultItem[], vault: model.Vault) => Promise<api.PatchVaultItemsResponse>;
+export declare const legacyDeleteAllArchivedItems: (c: Context, vault: model.Vault) => Promise<void>;
+export declare const getDeletedItemsForVault: (c: Context, vault: model.Vault) => Promise<VaultItem[]>;
+export declare const purgeDeletedVaultItemForVault: (c: Context, vault: model.Vault, itemUUID: string) => Promise<void>;
+export declare const getVaultItemHistory: (c: Context, item: VaultItem) => Promise<api.ItemHistoryResponse>;
+export declare const deleteVaultItemHistory: (c: Context, item: VaultItem) => Promise<void>;
+export declare const getPreviousVersionOfItem: (c: Context, vault: model.Vault, item: VaultItem, itemVersion: number) => Promise<VaultItem>;
+export declare const getAllCreditCardItems: (c: Context) => Promise<VaultItem[]>;

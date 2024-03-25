@@ -1,0 +1,5 @@
+packages:
+  - '1password-libs/*'
+  - '1password-share-link-to-url-scheme/'
+  - 'example/'
+  - '!**/test/**'

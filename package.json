@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "turbo run build --concurrency=100%"
+  },
+  "pnpm": {
+    "overrides": {
+      "lodash-es": "npm:lodash@^4.17.15"
+    }
+  },
+  "devDependencies": {
+    "npm-check-updates": "^16.14.17",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.3"
+  }
+}

@@ -1,0 +1,67 @@
+{
+	"name": "@1password/web-api",
+	"version": "0.4.1",
+	"description": "1Password Web API",
+	"author": "1Password",
+	"license": "UNLICENSED",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/esm/index.d.ts",
+	"scripts": {
+		"test": "jest",
+		"ts": "tsc",
+		"ts-watch": "tsc --watch",
+		"ts-cjs": "tsc --project tsconfig.cjs.json",
+		"ts-esm": "tsc --project tsconfig.esm.json",
+		"cjs": "npm run ts-cjs && find dist/cjs -iname \"*.js\" -exec uglifyjs {} --compress --mangle --output {} \\;",
+		"esm": "npm run ts-esm && find dist/esm -iname \"*.js\" -exec uglifyjs {} --compress --mangle --output {} \\;",
+		"build": "rm -rf dist && npm run cjs && npm run esm"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://gitlab.1password.io/dev/b5/b5.git"
+	},
+	"bugs": {
+		"url": "https://gitlab.1password.io/dev/b5/b5/-/issues"
+	},
+	"homepage": "https://gitlab.1password.io/dev/b5/b5",
+	"devDependencies": {
+		"@1password/front-end-style": "^3.0.0",
+		"@peculiar/webcrypto": "^1.1.4",
+		"@types/jsbn": "^1.2.29",
+		"@types/lodash-es": "^4.17.1",
+		"@types/papaparse": "^5.0.3",
+		"@types/qwest": "^1.7.28",
+		"chokidar": "^3.0.0",
+		"circular-dependency-plugin": "^5.2.0",
+		"jest": "^26.6.3",
+		"jest-junit": "^12.0.0",
+		"typescript": "^4.1.3",
+		"uglify-es": "^3.3.9"
+	},
+	"dependencies": {
+		"@1password/contact-service-types": "^1.1.2",
+		"fp-ts": "^2.8.6",
+		"io-ts": "^2.1.2",
+		"jsbn": "^0.1.0",
+		"lodash-es": "^4.17.15",
+		"moment": "^2.21.0",
+		"papaparse": "^5.1.1",
+		"qwest": "^4.5.0",
+		"sjcl": "agilebits/sjcl#b5"
+	},
+	"resolutions": {
+		"path-parse": "^1.0.7",
+		"tmpl": "^1.0.5"
+	},
+	"importSort": {
+		".ts": {
+			"parser": "typescript",
+			"style": "@1password/import-sort-style"
+		}
+	},
+	"files": [
+		"/dist",
+		"/README.md"
+	]
+}

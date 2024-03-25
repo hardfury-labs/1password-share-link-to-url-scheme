@@ -1,0 +1,198 @@
+import { BackofficeUserSigningKeyset } from "../api";
+import * as model from "../model";
+import { Context } from "./context";
+export declare const loadBackoffice: (c: Context) => Promise<model.Backoffice>;
+export declare const performBackofficeAction: (c: Context, action: model.BackofficeAction, params: Record<string, string>) => Promise<model.BackofficeActionResult>;
+export declare const getBackofficeInvoice: (c: Context, invoiceUID: string) => Promise<Readonly<{
+    stripeInvoiceUID: string;
+    accountName: string;
+    address: string;
+    amountDue: number;
+    attemptCount: number;
+    attempted: boolean;
+    billTo: string;
+    charge: Readonly<{
+        uid: string;
+        amount: number;
+        captured: boolean;
+        created: string;
+        currency: string;
+        paid: boolean;
+        refunded: boolean;
+        amountRefunded: number;
+        desc: string;
+        failMsg: string;
+        failCode: string;
+        meta: {
+            [x: string]: string;
+        };
+        email: string;
+        statement: string;
+        status: string;
+        source: Readonly<{
+            stripeCardUid: string;
+            brand: string;
+            country: string;
+            isDefault: boolean;
+            expMonth: number;
+            expYear: number;
+            name: string;
+            state: string | undefined;
+            zip: string | undefined;
+            lastFour: string;
+        }> | null;
+    }> | null;
+    closed: boolean;
+    currency: string;
+    date: string;
+    description: string;
+    discount: Readonly<{
+        coupon: Readonly<{
+            stripeCouponUID: string;
+            amountOff: number;
+            percentOff: number;
+            createdAt: string;
+            currency: string;
+            duration: string;
+            durationInMonths: number;
+        }> | null;
+        start: string;
+        end: string;
+    }> | null;
+    endingBalance: number;
+    forgiven: boolean;
+    lines: readonly Readonly<{
+        stripeInvoiceLineUID: string;
+        amount: number;
+        currency: string;
+        description: string;
+        periodStart: string;
+        periodEnd: string;
+        planUID: string | undefined;
+        quantity: number;
+        proration: boolean;
+        discountable: boolean;
+        taxName: string;
+    }>[];
+    metadata: {
+        [x: string]: string;
+    };
+    nextPaymentAttempt: string;
+    willRetry: boolean;
+    paid: boolean;
+    periodStart: string;
+    periodEnd: string;
+    startingBalance: number;
+    statementDescriptor: string;
+    subtotal: number;
+    tax: number;
+    taxPercent: number;
+    total: number;
+    taxName: string;
+    taxNumber: string;
+    isTaxExempt: boolean;
+    opTaxNumbers: readonly Readonly<{
+        label: string;
+        number: string;
+        effective: string;
+    }>[] | null;
+    showDefaultTaxMsg: boolean;
+}>>;
+export declare const getBackofficeNextInvoice: (c: Context, customerUID: string) => Promise<Readonly<{
+    stripeInvoiceUID: string;
+    accountName: string;
+    address: string;
+    amountDue: number;
+    attemptCount: number;
+    attempted: boolean;
+    billTo: string;
+    charge: Readonly<{
+        uid: string;
+        amount: number;
+        captured: boolean;
+        created: string;
+        currency: string;
+        paid: boolean;
+        refunded: boolean;
+        amountRefunded: number;
+        desc: string;
+        failMsg: string;
+        failCode: string;
+        meta: {
+            [x: string]: string;
+        };
+        email: string;
+        statement: string;
+        status: string;
+        source: Readonly<{
+            stripeCardUid: string;
+            brand: string;
+            country: string;
+            isDefault: boolean;
+            expMonth: number;
+            expYear: number;
+            name: string;
+            state: string | undefined;
+            zip: string | undefined;
+            lastFour: string;
+        }> | null;
+    }> | null;
+    closed: boolean;
+    currency: string;
+    date: string;
+    description: string;
+    discount: Readonly<{
+        coupon: Readonly<{
+            stripeCouponUID: string;
+            amountOff: number;
+            percentOff: number;
+            createdAt: string;
+            currency: string;
+            duration: string;
+            durationInMonths: number;
+        }> | null;
+        start: string;
+        end: string;
+    }> | null;
+    endingBalance: number;
+    forgiven: boolean;
+    lines: readonly Readonly<{
+        stripeInvoiceLineUID: string;
+        amount: number;
+        currency: string;
+        description: string;
+        periodStart: string;
+        periodEnd: string;
+        planUID: string | undefined;
+        quantity: number;
+        proration: boolean;
+        discountable: boolean;
+        taxName: string;
+    }>[];
+    metadata: {
+        [x: string]: string;
+    };
+    nextPaymentAttempt: string;
+    willRetry: boolean;
+    paid: boolean;
+    periodStart: string;
+    periodEnd: string;
+    startingBalance: number;
+    statementDescriptor: string;
+    subtotal: number;
+    tax: number;
+    taxPercent: number;
+    total: number;
+    taxName: string;
+    taxNumber: string;
+    isTaxExempt: boolean;
+    opTaxNumbers: readonly Readonly<{
+        label: string;
+        number: string;
+        effective: string;
+    }>[] | null;
+    showDefaultTaxMsg: boolean;
+}>>;
+export declare const getBackofficeList: (c: Context, accountID: number, listType: string) => Promise<model.BackofficeSelectInputOptionList>;
+export { BackofficeUserSigningKeyset };
+export declare const getBackofficeSigningKeysetForUser: (c: Context, userUuid: string) => Promise<BackofficeUserSigningKeyset>;

@@ -1,0 +1,32 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.organizeImports.sortImports", "source.organizeImports.sortImports"],
+  "editor.quickSuggestions": { "strings": "on" },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // https://marketplace.visualstudio.com/items?itemName=dozerg.tsimportsorter
+  "tsImportSorter.configuration.groupRules": [
+    // https://github.com/daidodo/format-imports/wiki/Grouping-Rules#types-of-imports
+    { "flags": "scripts" },
+    {
+      "flags": "named",
+      "subGroups": ["^react$", "^next$", "^next-", "^@\\w", "^\\w"]
+    },
+    ["^~/"],
+    ["^\\.\\."],
+    ["^\\."]
+  ],
+  "tsImportSorter.configuration.keepUnused": [".*"],
+  "tsImportSorter.configuration.wrappingStyle": {
+    // https://github.com/daidodo/format-imports/wiki/Line-Wrapping-Style
+    "maxNamesPerWrappedLine": 0,
+    "maxBindingNamesPerLine": 0,
+    "maxDefaultAndBindingNamesPerLine": 0
+  }
+}

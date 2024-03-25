@@ -1,0 +1,17 @@
+export var TopBarContentChanged = "TopBarContentChanged";
+export var SpecialNavChanged = "SpecialNavChanged";
+export var UniverseReloaded = "UniverseReloaded";
+export var ClientStateChanged = "ClientStateChanged";
+export var ServerChanged = "ServerChanged";
+export var ServerChangedWithData = "ServerChangedWithData";
+export var LanguageRefreshed = "LanguageRefreshed";
+export var UsersChanged = "UsersChanged";
+export var ServerChangedFromSelf = "ServerChangedFromSelf";
+export var SessionInitialized = "SessionInitialized";
+export var SessionInitError = "SessionInitError";
+export var ReloadForced = "ReloadForced";
+export var SessionExpired = "SessionExpired";
+export var SignedIn = "SignedIn";
+export var SignedOut = "SignedOut";
+export var TimeoutWarning = "TimeoutWarning";
+export var RecoveryStarted = "RecoveryStarted";
